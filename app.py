@@ -172,7 +172,7 @@ async def handle_new_question():
     if new_message:
         st.write("Processing your new question...")
         st.session_state.clear()
-        st.experimental_rerun()
+        st.rerun()
 
 
 
