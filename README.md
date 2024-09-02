@@ -1,6 +1,4 @@
-Here's the entire content converted into Markdown:
 
-```markdown
 # AI Medical Receptionist
 
 ## Overview
