@@ -32,7 +32,7 @@ os.environ["GOOGLE_API_KEY"] = st.secrets["G_API_KEY"]
 
 @st.cache_resource(show_spinner=True)
 def load_vectorstore():
-    loader = PyPDFLoader("D:/ai-reception/Medical_Receptionist_QnA.pdf")
+    loader = PyPDFLoader("Medical_Receptionist_QnA.pdf")
     docs = loader.load()
     text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=500, chunk_overlap=0)
     doc_splits = text_splitter.split_documents(docs)
