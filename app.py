@@ -171,6 +171,7 @@ async def handle_new_question():
     new_message = st.text_input("What's your question?", key="new_question")
     if new_message:
         st.write("Processing your new question...")
+        st.session_state.clear()
         st.experimental_rerun()
 
 
