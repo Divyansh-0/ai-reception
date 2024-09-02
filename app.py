@@ -168,10 +168,12 @@ async def handle_emergency_conversation(emergency: str, location: str):
 
 
 async def handle_new_question():
-    new_message = st.text_input("What's your question?", key="new_question")
-    if new_message:
-        st.write("Processing your new question...")
-        st.session_state.clear()
+
+    keys_to_clear = ["input", "location", "new_question", "clarification", "key", "follow_up_options"]
+    
+    for key in keys_to_clear:
+        if key in st.session_state:
+            del st.session_state[key]
         st.rerun()
 
 
