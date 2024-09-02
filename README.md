@@ -1,6 +1,8 @@
 
 # AI Medical Receptionist
 
+[Try it Out Here]("https://ai-reception-a9tn9vmaukq7ypmnmzryon.streamlit.app/)
+
 ## Overview
 This project is an AI-powered medical receptionist designed to assist users by determining the urgency of their medical concerns, providing immediate advice, and forwarding messages to the doctor if necessary. The AI can handle conversations, assess emergencies, and offer clarifications based on prior advice given.
 
