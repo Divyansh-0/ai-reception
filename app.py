@@ -171,26 +171,20 @@ async def handle_new_question():
     new_message = st.text_input("What's your question?", key="new_question")
     if new_message:
         st.write("Processing your new question...")
-        keys_to_clear = ["input", "location", "new_question", "clarification", "key", "follow_up_options"]
-    
-    for key in keys_to_clear:
-        if key in st.session_state:
-            del st.session_state[key]
+ 
         st.rerun()
-
 
 
 async def handle_clarification(previous_action: str):
     clarification = st.text_input("Please specify your doubt:", key="clarification")
     if clarification:
-        
         st.write("Let me clarify that for you...")
-        response = await asyncio.run(clarify_doubt(previous_action, clarification))
+        response = await clarify_doubt(previous_action, clarification)
         st.write(response)
 
 async def clarify_doubt(previous_action: str, clarification: str):
-    
     return f"Regarding the previous advice '{previous_action}', your clarification '{clarification}' means that you should continue to follow the given steps. If you're still unsure, contact the doctor immediately."
+
 
 
 
