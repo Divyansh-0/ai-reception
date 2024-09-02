@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import os
 import asyncio
 import random
@@ -24,7 +28,7 @@ from langchain_core.outputs import LLMResult
 
 
 
-os.environ["GOOGLE_API_KEY"] = ""
+os.environ["GOOGLE_API_KEY"] = st.secrets["G_API_KEY"]
 
 @st.cache_resource(show_spinner=True)
 def load_vectorstore():
